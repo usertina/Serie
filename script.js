@@ -11,7 +11,7 @@ const EPISODIOS = [
     {
         titulo: "Shabbat",
         descripcion: "Temporada 1, Episodio 2",
-        url: "https://watch.thechosen.tv/video/184683594335?language=en&position=0"
+        url: "https://box-1102-t.vmeas.cloud/hls/,xqx2pf4unzokjiqbtgssjiyd5gvkx4rftjckquapfued363nsjwxs36p2iya,.urlset/master.m3u8"
     },
     {
         titulo: "Jesus Loves Me",
