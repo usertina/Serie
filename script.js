@@ -5,7 +5,8 @@ const EPISODIOS = [
     {
         titulo: "Shema",
         descripcion: "Temporada 1, Episodio 1",
-        url: "https://watch.thechosen.tv/video/184683594334?language=en&position=0"
+        // 🔴 SOLO ESTE ENLACE HA SIDO CAMBIADO al formato .m3u8
+        url: "https://cloud-s84178-118-164.spcdn.cc/hls/h75azyppfle2alhulmzt4lm5dsucxda2f7hzw3lbwumg3a5tb5i2lckyj2ra/master.m3u8"
     },
     {
         titulo: "Shabbat",
@@ -90,7 +91,61 @@ const EPISODIOS = [
 
 document.addEventListener('DOMContentLoaded', () => {
     const lista = document.getElementById('lista');
+    const modal = document.getElementById('videoModal');
+    const modalVideo = document.getElementById('modalVideo');
+    const closeBtn = document.querySelector('.close');
 
+    // Función para reproducir video HLS
+    function playHLS(url) {
+        modal.style.display = 'flex';
+        
+        // Detener cualquier reproducción anterior
+        modalVideo.pause();
+        modalVideo.src = '';
+        
+        // Verificar si es un enlace .m3u8
+        if (url.includes('.m3u8')) {
+            if (Hls.isSupported()) {
+                const hls = new Hls();
+                hls.loadSource(url);
+                hls.attachMedia(modalVideo);
+                hls.on(Hls.Events.MANIFEST_PARSED, function() {
+                    modalVideo.play().catch(e => console.log('Autoplay bloqueado:', e));
+                });
+            } else if (modalVideo.canPlayType('application/vnd.apple.mpegurl')) {
+                // Para Safari
+                modalVideo.src = url;
+                modalVideo.addEventListener('loadedmetadata', function() {
+                    modalVideo.play().catch(e => console.log('Autoplay bloqueado:', e));
+                });
+            } else {
+                alert('Tu navegador no soporta reproducción HLS');
+                modal.style.display = 'none';
+            }
+        } else {
+            // Si es un enlace normal (watch.thechosen.tv), abrir en nueva pestaña
+            window.open(url, '_blank');
+            modal.style.display = 'none';
+        }
+    }
+
+    // Cerrar modal
+    closeBtn.onclick = () => {
+        modal.style.display = 'none';
+        modalVideo.pause();
+        modalVideo.src = '';
+    };
+
+    // Cerrar modal al hacer click fuera del video
+    window.onclick = (event) => {
+        if (event.target === modal) {
+            modal.style.display = 'none';
+            modalVideo.pause();
+            modalVideo.src = '';
+        }
+    };
+
+    // Crear las cards
     EPISODIOS.forEach((ep, i) => {
         const card = document.createElement('div');
         card.className = 'card';
@@ -107,12 +162,23 @@ document.addEventListener('DOMContentLoaded', () => {
             <div class="btn-play" aria-hidden="true">▶</div>
         `;
 
-        // Abrir directamente en el navegador — sin iframe, sin cookies, sin menús
-        const abrir = () => { window.location.href = ep.url; };
+        // Función para manejar el click
+        const abrir = () => { 
+            // Si es el episodio 1 (índice 0), usar el reproductor HLS
+            if (i === 0) {  // 👈 SOLO EL PRIMER EPISODIO USA HLS
+                playHLS(ep.url);
+            } else {
+                // El resto de episodios se abren normalmente
+                window.location.href = ep.url;
+            }
+        };
 
         card.addEventListener('click', abrir);
         card.addEventListener('keydown', e => {
-            if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); abrir(); }
+            if (e.key === 'Enter' || e.key === ' ') { 
+                e.preventDefault(); 
+                abrir(); 
+            }
         });
 
         lista.appendChild(card);
