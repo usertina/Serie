@@ -16,7 +16,7 @@ const EPISODIOS = [
     {
         titulo: "Jesus Loves Me",
         descripcion: "Temporada 1, Episodio 3",
-        url: "https://watch.thechosen.tv/video/184683594336?language=en&position=0"
+        url: "https://stream-4491-212-99.pkcdn.org/keohpguqgyikkfn2mcw7qlsigwyak2hlgbdppsebo2k7tgluthnhf4nlgi/v.mp4"
     },
     {
         titulo: "The Rock on Which It Is Built",
