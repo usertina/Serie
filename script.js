@@ -1,275 +1,191 @@
-// ==================== CONFIGURACIÓN ====================
-const CONFIG = {
-    VIDEO_URL: 'https://watch.thechosen.tv/video/184683594334?language=en&position=0',
-    AUTOPLAY: true,
-    LOAD_TIMEOUT: 10000, // 10 segundos máximo de carga
-    RETRY_ATTEMPTS: 3
-};
+// ============================================================
+//  ✏️  PARA AÑADIR MÁS VIDEOS: edita solo este array
+//      Copia un bloque { ... } y pega uno nuevo debajo,
+//      separado por una coma.
+// ============================================================
+const VIDEOS = [
+    {
+        titulo: "Episodio 1 — Luz del Mundo",
+        descripcion: "El comienzo del viaje de Jesús y sus primeros discípulos.",
+        url: "https://watch.thechosen.tv/video/184683594334?language=en&position=0"
+    },
+    {
+        titulo: "Episodio 2 — Shabbat",
+        descripcion: "Jesús celebra el Sabbat con sus nuevos amigos.",
+        url: "https://watch.thechosen.tv/video/184683594334?language=en&position=0"
+        // ← Cambia esta URL por la del episodio real
+    },
+    {
+        titulo: "Episodio 3 — Jesús vino a mi",
+        descripcion: "Un encuentro transformador en el pozo de Jacob.",
+        url: "https://watch.thechosen.tv/video/184683594334?language=en&position=0"
+        // ← Cambia esta URL por la del episodio real
+    }
+    // ← Para añadir más: copia estas líneas y pégalas aquí (con coma antes)
+    // ,{
+    //     titulo: "Episodio 4 — Título del episodio",
+    //     descripcion: "Descripción breve.",
+    //     url: "https://watch.thechosen.tv/video/XXXXXXX?language=en&position=0"
+    // }
+];
 
-// ==================== ELEMENTOS DOM ====================
-const elements = {
-    loadingScreen: document.getElementById('loading-screen'),
-    videoContainer: document.getElementById('video-container'),
-    videoFrame: document.getElementById('video-frame'),
-    playButton: document.getElementById('play-button'),
-    helpButton: document.getElementById('help-button'),
-    helpModal: document.getElementById('help-modal'),
-    closeHelp: document.getElementById('close-help'),
-    errorMessage: document.getElementById('error-message'),
-    retryButton: document.getElementById('retry-button')
-};
+// ============================================================
+//  NO hace falta tocar nada de aquí abajo
+// ============================================================
 
-// ==================== ESTADO ====================
-let state = {
-    isLoaded: false,
-    isPlaying: false,
-    retryCount: 0
-};
+// ---------- Elementos DOM ----------
+const screenList   = document.getElementById('screen-list');
+const screenPlayer = document.getElementById('screen-player');
+const videoList    = document.getElementById('video-list');
+const videoFrame   = document.getElementById('video-frame');
+const playOverlay  = document.getElementById('play-overlay');
+const playButton   = document.getElementById('play-button');
+const playerTitleBar = document.getElementById('player-title-bar');
+const episodeTitle = document.getElementById('episode-title');
+const episodeDesc  = document.getElementById('episode-desc');
+const btnBack      = document.getElementById('btn-back');
+const btnRetry     = document.getElementById('btn-retry');
+const errorModal   = document.getElementById('error-modal');
 
-// ==================== INICIALIZACIÓN ====================
+let currentVideo = null;
+
+// ---------- Arrancar ----------
 document.addEventListener('DOMContentLoaded', () => {
-    initApp();
     checkConnection();
-    setupEventListeners();
+    renderList();
+    setupEvents();
 });
 
-function initApp() {
-    // Construir URL con parámetros
-    const url = buildVideoUrl();
-    elements.videoFrame.src = url;
-    
-    // Monitorear carga del iframe
-    monitorIframeLoad();
-}
+// ---------- Render lista ----------
+function renderList() {
+    videoList.innerHTML = '';
 
-function buildVideoUrl() {
-    const url = new URL(CONFIG.VIDEO_URL);
-    
-    // Parámetros para autoplay y configuración
-    url.searchParams.set('autoplay', CONFIG.AUTOPLAY ? '1' : '0');
-    url.searchParams.set('position', '0');
-    
-    // Idioma (puedes cambiar 'en' por 'es' si está disponible)
-    url.searchParams.set('language', 'en');
-    
-    return url.toString();
-}
+    VIDEOS.forEach((video, index) => {
+        const card = document.createElement('div');
+        card.className = 'video-card';
+        card.setAttribute('role', 'button');
+        card.setAttribute('tabindex', '0');
+        card.setAttribute('aria-label', `Ver ${video.titulo}`);
 
-function monitorIframeLoad() {
-    let loadTimeout = setTimeout(() => {
-        if (!state.isLoaded) {
-            handleLoadError();
-        }
-    }, CONFIG.LOAD_TIMEOUT);
-    
-    // Escuchar mensaje del iframe (si la plataforma lo permite)
-    window.addEventListener('message', (event) => {
-        if (event.origin.includes('thechosen.tv')) {
-            clearTimeout(loadTimeout);
-            onVideoLoaded();
-        }
-    });
-    
-    // Fallback: asumir carga después de timeout razonable
-    setTimeout(() => {
-        clearTimeout(loadTimeout);
-        onVideoLoaded();
-    }, 5000);
-}
+        card.innerHTML = `
+            <div class="card-number">${index + 1}</div>
+            <div class="card-body">
+                <h3 class="card-title">${video.titulo}</h3>
+                <p class="card-desc">${video.descripcion}</p>
+            </div>
+            <div class="card-arrow">▶</div>
+        `;
 
-function onVideoLoaded() {
-    state.isLoaded = true;
-    
-    // Ocultar pantalla de carga
-    elements.loadingScreen.classList.add('hidden');
-    
-    // Mostrar botón de play y ayuda
-    elements.playButton.classList.remove('hidden');
-    elements.helpButton.classList.remove('hidden');
-    
-    // Enfocar botón de play para accesibilidad
-    elements.playButton.focus();
-}
+        card.addEventListener('click', () => openPlayer(index));
+        card.addEventListener('keydown', (e) => {
+            if (e.key === 'Enter' || e.key === ' ') openPlayer(index);
+        });
 
-function handleLoadError() {
-    state.retryCount++;
-    
-    if (state.retryCount >= CONFIG.RETRY_ATTEMPTS) {
-        elements.loadingScreen.classList.add('hidden');
-        elements.errorMessage.classList.remove('hidden');
-    } else {
-        // Reintentar automáticamente
-        elements.videoFrame.src = buildVideoUrl();
-        monitorIframeLoad();
-    }
-}
-
-// ==================== EVENT LISTENERS ====================
-function setupEventListeners() {
-    // Botón de Play principal
-    elements.playButton.addEventListener('click', () => {
-        playVideo();
-    });
-    
-    // Botón de ayuda
-    elements.helpButton.addEventListener('click', () => {
-        showHelp();
-    });
-    
-    // Cerrar modal de ayuda
-    elements.closeHelp.addEventListener('click', () => {
-        hideHelp();
-    });
-    
-    // Cerrar modal al tocar fuera
-    elements.helpModal.addEventListener('click', (e) => {
-        if (e.target === elements.helpModal) {
-            hideHelp();
-        }
-    });
-    
-    // Botón de reintentar
-    elements.retryButton.addEventListener('click', () => {
-        retryLoad();
-    });
-    
-    // Tecla Escape para cerrar modal
-    document.addEventListener('keydown', (e) => {
-        if (e.key === 'Escape') {
-            hideHelp();
-        }
-    });
-    
-    // Doble tap para pantalla completa
-    let lastTap = 0;
-    document.addEventListener('touchend', (e) => {
-        const currentTime = new Date().getTime();
-        const tapLength = currentTime - lastTap;
-        
-        if (tapLength < 500 && tapLength > 0) {
-            toggleFullscreen();
-            e.preventDefault();
-        }
-        lastTap = currentTime;
-    });
-    
-    // Monitorear conexión
-    window.addEventListener('online', () => {
-        if (state.retryCount > 0) {
-            retryLoad();
-        }
-    });
-    
-    window.addEventListener('offline', () => {
-        showError('Conexión perdida');
+        videoList.appendChild(card);
     });
 }
 
-// ==================== FUNCIONES DE VIDEO ====================
+// ---------- Abrir reproductor ----------
+function openPlayer(index) {
+    currentVideo = VIDEOS[index];
+
+    // Rellenar info
+    playerTitleBar.textContent = `Ep. ${index + 1}`;
+    episodeTitle.textContent   = currentVideo.titulo;
+    episodeDesc.textContent    = currentVideo.descripcion;
+
+    // Limpiar iframe (no cargamos hasta que pulse play)
+    videoFrame.src = '';
+    playOverlay.classList.remove('hidden');
+
+    // Cambiar pantalla
+    screenList.classList.add('hidden');
+    screenPlayer.classList.remove('hidden');
+
+    // Scroll arriba
+    window.scrollTo(0, 0);
+}
+
+// ---------- Reproducir ----------
 function playVideo() {
-    // Ocultar botón de play
-    elements.playButton.classList.add('hidden');
-    elements.helpButton.classList.add('hidden');
-    
-    state.isPlaying = true;
-    
-    // Intentar hacer focus en el iframe para autoplay
-    elements.videoFrame.focus();
-    
-    // Enviar mensaje al iframe si es posible
-    try {
-        elements.videoFrame.contentWindow.postMessage({
-            action: 'play'
-        }, '*');
-    } catch (e) {
-        console.log('No se pudo enviar mensaje al iframe');
-    }
+    if (!currentVideo) return;
+
+    // Ocultar overlay
+    playOverlay.classList.add('hidden');
+
+    // Cargar iframe
+    videoFrame.src = currentVideo.url;
+
+    // Si el iframe no puede cargar (X-Frame-Options bloqueado),
+    // abrimos directamente en el navegador como fallback
+    videoFrame.onerror = () => {
+        window.open(currentVideo.url, '_blank');
+    };
+
+    // Wake Lock: mantener pantalla encendida
+    keepScreenOn();
 }
 
-function pauseVideo() {
-    try {
-        elements.videoFrame.contentWindow.postMessage({
-            action: 'pause'
-        }, '*');
-    } catch (e) {
-        console.log('No se pudo enviar mensaje al iframe');
-    }
+// ---------- Volver a la lista ----------
+function goBack() {
+    videoFrame.src = ''; // Detener video
+    screenPlayer.classList.add('hidden');
+    screenList.classList.remove('hidden');
+    currentVideo = null;
+}
+
+// ---------- Eventos ----------
+function setupEvents() {
+    playButton.addEventListener('click', playVideo);
+    btnBack.addEventListener('click', goBack);
+    btnRetry.addEventListener('click', () => {
+        errorModal.classList.add('hidden');
+        renderList();
+    });
+
+    window.addEventListener('offline', () => showError());
+    window.addEventListener('online',  () => errorModal.classList.add('hidden'));
+
+    // Doble tap → pantalla completa (solo en reproductor)
+    let lastTap = 0;
+    screenPlayer.addEventListener('touchend', (e) => {
+        const now = Date.now();
+        if (now - lastTap < 400 && now - lastTap > 0) {
+            toggleFullscreen();
+        }
+        lastTap = now;
+    });
+
+    // Evitar zoom accidental
+    document.addEventListener('gesturestart', (e) => e.preventDefault());
+}
+
+// ---------- Utilidades ----------
+function checkConnection() {
+    if (!navigator.onLine) showError();
+}
+
+function showError() {
+    errorModal.classList.remove('hidden');
 }
 
 function toggleFullscreen() {
     if (!document.fullscreenElement) {
-        document.documentElement.requestFullscreen().catch((e) => {
-            console.log('Error al activar pantalla completa:', e);
-        });
+        document.documentElement.requestFullscreen().catch(() => {});
     } else {
-        document.exitFullscreen().catch((e) => {
-            console.log('Error al salir de pantalla completa:', e);
-        });
+        document.exitFullscreen().catch(() => {});
     }
 }
 
-// ==================== FUNCIONES DE UI ====================
-function showHelp() {
-    elements.helpModal.classList.remove('hidden');
-    elements.closeHelp.focus();
-}
-
-function hideHelp() {
-    elements.helpModal.classList.add('hidden');
-    elements.playButton.focus();
-}
-
-function showError(message) {
-    elements.loadingScreen.classList.add('hidden');
-    elements.errorMessage.classList.remove('hidden');
-    elements.errorMessage.querySelector('p').textContent = message || 'Verifica tu internet e intenta de nuevo';
-}
-
-function retryLoad() {
-    elements.errorMessage.classList.add('hidden');
-    elements.loadingScreen.classList.remove('hidden');
-    elements.loadingScreen.querySelector('p').textContent = 'Reintentando...';
-    
-    state.retryCount = 0;
-    elements.videoFrame.src = buildVideoUrl();
-    monitorIframeLoad();
-}
-
-// ==================== CONEXIÓN ====================
-function checkConnection() {
-    if (!navigator.onLine) {
-        showError('Sin conexión a internet');
+function keepScreenOn() {
+    if ('wakeLock' in navigator) {
+        navigator.wakeLock.request('screen').catch(() => {});
     }
 }
 
-// ==================== SERVICE WORKER (PWA) ====================
+// ---------- Service Worker (PWA) ----------
 if ('serviceWorker' in navigator) {
     window.addEventListener('load', () => {
-        navigator.serviceWorker.register('sw.js').then((registration) => {
-            console.log('ServiceWorker registrado:', registration.scope);
-        }).catch((error) => {
-            console.log('ServiceWorker falló:', error);
-        });
+        navigator.serviceWorker.register('sw.js').catch(() => {});
     });
 }
-
-// ==================== PREVENIR ZOOM ACCIDENTAL ====================
-document.addEventListener('gesturestart', (e) => {
-    e.preventDefault();
-});
-
-// ==================== MANTENER PANTALLA ENCENDIDA ====================
-function keepScreenOn() {
-    try {
-        if ('wakeLock' in navigator) {
-            navigator.wakeLock.request('screen').then(() => {
-                console.log('Pantalla mantenida encendida');
-            });
-        }
-    } catch (e) {
-        console.log('Wake Lock no soportado');
-    }
-}
-
-// Activar cuando el video está reproduciendo
-elements.playButton.addEventListener('click', keepScreenOn);
