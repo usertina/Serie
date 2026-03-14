@@ -3,76 +3,32 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
-    <meta name="theme-color" content="#0a0a0f">
+    <meta name="theme-color" content="#080810">
     <meta name="apple-mobile-web-app-capable" content="yes">
     <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
     <title>The Chosen</title>
     <link rel="stylesheet" href="styles.css">
-    <link rel="manifest" href="manifest.json">
-    <link rel="icon" type="image/png" href="icon-192.png">
-    <link rel="apple-touch-icon" href="icon-192.png">
 </head>
 <body>
+    <div id="app">
 
-    <!-- ===== PANTALLA: LISTA DE VIDEOS ===== -->
-    <div id="screen-list">
         <header>
-            <div class="logo-area">
-                <span class="logo-cross">✝</span>
-                <h1>The Chosen</h1>
+            <div class="header-inner">
+                <span class="cross">✝</span>
+                <div>
+                    <h1>The Chosen</h1>
+                    <p class="subtitle">Temporada 1 · 16 episodios</p>
+                </div>
             </div>
-            <p class="subtitle">Selecciona un episodio</p>
         </header>
 
-        <div id="video-list" class="video-list"></div>
+        <main id="lista"></main>
+
+        <footer>
+            <p>Al pulsar ▶ el episodio se abre a pantalla completa en el navegador</p>
+        </footer>
+
     </div>
-
-    <!-- ===== PANTALLA: REPRODUCTOR ===== -->
-    <div id="screen-player" class="hidden">
-
-        <!-- Barra superior -->
-        <div id="player-topbar">
-            <button id="btn-back" aria-label="Volver">
-                ← Volver
-            </button>
-            <span id="player-title-bar"></span>
-        </div>
-
-        <!-- Iframe del video -->
-        <div id="video-wrapper">
-            <iframe
-                id="video-frame"
-                src=""
-                frameborder="0"
-                allow="autoplay; fullscreen; picture-in-picture"
-                allowfullscreen>
-            </iframe>
-            <!-- Overlay inicial con botón play grande -->
-            <div id="play-overlay">
-                <button id="play-button" aria-label="Reproducir">
-                    <span class="play-icon">▶</span>
-                    <span class="play-text">VER EPISODIO</span>
-                </button>
-            </div>
-        </div>
-
-        <!-- Información del episodio -->
-        <div id="episode-info">
-            <h2 id="episode-title"></h2>
-            <p id="episode-desc"></p>
-        </div>
-    </div>
-
-    <!-- ===== MODAL DE ERROR ===== -->
-    <div id="error-modal" class="modal hidden">
-        <div class="modal-content">
-            <span class="error-icon">⚠️</span>
-            <h2>Sin conexión</h2>
-            <p>Verifica tu internet e intenta de nuevo</p>
-            <button id="btn-retry">Reintentar</button>
-        </div>
-    </div>
-
     <script src="script.js"></script>
 </body>
 </html>
