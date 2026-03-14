@@ -1,396 +1,200 @@
-/* ==================== RESET ==================== */
-*, *::before, *::after {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-}
+/* ===== RESET ===== */
+*, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
 
-/* ==================== VARIABLES ==================== */
+/* ===== VARIABLES ===== */
 :root {
-    --rojo:       #E63946;
-    --rojo-dark:  #c1121f;
-    --oro:        #d4a017;
-    --bg-deep:    #0a0a0f;
-    --bg-card:    #13131f;
-    --bg-card2:   #1a1a2e;
-    --texto:      #f0f0f0;
-    --texto-suave:#a0a0b8;
-    --borde:      #2a2a40;
+    --rojo:      #e63946;
+    --rojo-osc:  #c1121f;
+    --oro:       #c9a84c;
+    --bg:        #080810;
+    --bg-card:   #10101e;
+    --bg-card2:  #15152a;
+    --borde:     #1e1e35;
+    --texto:     #eeeef5;
+    --suave:     #7a7a9a;
 }
 
-/* ==================== BASE ==================== */
+/* ===== BASE ===== */
 html, body {
-    height: 100%;
-    font-family: Georgia, 'Times New Roman', serif;
-    background: var(--bg-deep);
+    min-height: 100%;
+    background: var(--bg);
     color: var(--texto);
-    overflow-x: hidden;
-    touch-action: manipulation;
+    font-family: Georgia, 'Times New Roman', serif;
     -webkit-tap-highlight-color: transparent;
+    touch-action: manipulation;
 }
 
-/* ==================== PANTALLA LISTA ==================== */
-#screen-list {
-    min-height: 100vh;
-    padding: 0 0 40px;
+#app {
+    max-width: 680px;
+    margin: 0 auto;
+    padding-bottom: 48px;
 }
 
-/* --- Header --- */
+/* ===== HEADER ===== */
 header {
-    background: linear-gradient(180deg, #0f0f1a 0%, var(--bg-deep) 100%);
-    padding: 40px 24px 30px;
-    text-align: center;
+    padding: 36px 20px 28px;
     border-bottom: 1px solid var(--borde);
     position: relative;
 }
 
 header::after {
     content: '';
-    position: absolute;
-    bottom: 0;
-    left: 50%;
-    transform: translateX(-50%);
-    width: 60px;
+    display: block;
+    width: 48px;
     height: 3px;
     background: var(--rojo);
     border-radius: 2px;
+    margin-top: 16px;
 }
 
-.logo-area {
+.header-inner {
     display: flex;
     align-items: center;
-    justify-content: center;
-    gap: 14px;
-    margin-bottom: 10px;
+    gap: 18px;
 }
 
-.logo-cross {
-    font-size: 2.4rem;
+.cross {
+    font-size: 2.6rem;
     color: var(--oro);
-    text-shadow: 0 0 20px rgba(212,160,23,0.4);
+    text-shadow: 0 0 24px rgba(201,168,76,0.45);
+    flex-shrink: 0;
 }
 
-header h1 {
-    font-size: 2.2rem;
+h1 {
+    font-size: 2rem;
     font-weight: bold;
-    letter-spacing: 3px;
+    letter-spacing: 4px;
     text-transform: uppercase;
     color: var(--texto);
+    line-height: 1.1;
 }
 
 .subtitle {
-    font-size: 1rem;
-    color: var(--texto-suave);
+    font-size: 0.85rem;
+    color: var(--suave);
     font-style: italic;
-    margin-top: 6px;
+    margin-top: 4px;
 }
 
-/* --- Lista de cards --- */
-.video-list {
-    padding: 24px 16px;
+/* ===== LISTA ===== */
+main {
+    padding: 20px 12px 0;
     display: flex;
     flex-direction: column;
-    gap: 14px;
-    max-width: 700px;
-    margin: 0 auto;
+    gap: 10px;
 }
 
-/* --- Card individual --- */
-.video-card {
+/* ===== CARD ===== */
+.card {
     display: flex;
     align-items: center;
-    gap: 16px;
+    gap: 14px;
     background: var(--bg-card);
     border: 1px solid var(--borde);
-    border-radius: 16px;
-    padding: 20px 18px;
+    border-radius: 14px;
+    padding: 16px 14px;
     cursor: pointer;
-    transition: transform 0.2s ease, border-color 0.2s ease, box-shadow 0.2s ease;
+    transition: background 0.18s, border-color 0.18s, transform 0.14s;
     position: relative;
     overflow: hidden;
+    text-decoration: none;
 }
 
-.video-card::before {
-    content: '';
-    position: absolute;
-    inset: 0;
-    background: linear-gradient(135deg, rgba(230,57,70,0.04) 0%, transparent 60%);
-    opacity: 0;
-    transition: opacity 0.2s ease;
-}
-
-.video-card:active,
-.video-card:focus {
-    transform: scale(0.98);
+.card:active {
+    background: var(--bg-card2);
     border-color: var(--rojo);
-    box-shadow: 0 0 0 2px rgba(230,57,70,0.25);
-    outline: none;
+    transform: scale(0.985);
 }
 
-.video-card:active::before {
-    opacity: 1;
+.card:focus-visible {
+    outline: 2px solid var(--rojo);
+    outline-offset: 2px;
 }
 
-/* Número del episodio */
-.card-number {
+/* Número */
+.num {
     flex-shrink: 0;
-    width: 52px;
-    height: 52px;
+    width: 46px;
+    height: 46px;
     border-radius: 50%;
-    background: linear-gradient(135deg, var(--rojo) 0%, var(--rojo-dark) 100%);
+    background: linear-gradient(135deg, var(--rojo) 0%, var(--rojo-osc) 100%);
     color: #fff;
-    font-size: 1.5rem;
+    font-size: 1.3rem;
     font-weight: bold;
     display: flex;
     align-items: center;
     justify-content: center;
-    box-shadow: 0 4px 14px rgba(230,57,70,0.35);
+    box-shadow: 0 3px 12px rgba(230,57,70,0.3);
     font-family: Georgia, serif;
 }
 
-/* Cuerpo de la card */
-.card-body {
+/* Info */
+.info {
     flex: 1;
+    display: flex;
+    flex-direction: column;
+    gap: 3px;
     min-width: 0;
 }
 
-.card-title {
-    font-size: 1.05rem;
+.ep-titulo {
+    font-size: 1rem;
     font-weight: bold;
     color: var(--texto);
-    line-height: 1.4;
-    margin-bottom: 4px;
-}
-
-.card-desc {
-    font-size: 0.88rem;
-    color: var(--texto-suave);
-    line-height: 1.4;
     white-space: nowrap;
     overflow: hidden;
     text-overflow: ellipsis;
 }
 
-/* Flecha */
-.card-arrow {
-    flex-shrink: 0;
-    color: var(--rojo);
-    font-size: 1.1rem;
-    opacity: 0.7;
-}
-
-/* ==================== PANTALLA REPRODUCTOR ==================== */
-#screen-player {
-    display: flex;
-    flex-direction: column;
-    min-height: 100vh;
-    background: #000;
-}
-
-/* --- Top bar --- */
-#player-topbar {
-    display: flex;
-    align-items: center;
-    gap: 16px;
-    padding: 12px 16px;
-    background: rgba(0,0,0,0.85);
-    backdrop-filter: blur(10px);
-    border-bottom: 1px solid #222;
-    position: sticky;
-    top: 0;
-    z-index: 100;
-}
-
-#btn-back {
-    background: none;
-    border: 1px solid #333;
-    color: var(--texto);
-    font-size: 0.95rem;
-    padding: 8px 14px;
-    border-radius: 8px;
-    cursor: pointer;
-    white-space: nowrap;
-    transition: background 0.2s;
-}
-
-#btn-back:active {
-    background: #222;
-}
-
-#player-title-bar {
-    font-size: 1rem;
-    color: var(--texto-suave);
+.ep-sub {
+    font-size: 0.8rem;
+    color: var(--suave);
     font-style: italic;
-    overflow: hidden;
-    text-overflow: ellipsis;
-    white-space: nowrap;
 }
 
-/* --- Wrapper del iframe --- */
-#video-wrapper {
-    position: relative;
-    width: 100%;
-    aspect-ratio: 16 / 9;
-    background: #000;
+/* Botón play */
+.btn-play {
     flex-shrink: 0;
-}
-
-#video-frame {
-    width: 100%;
-    height: 100%;
-    border: none;
-    display: block;
-}
-
-/* --- Overlay play --- */
-#play-overlay {
-    position: absolute;
-    inset: 0;
-    background: linear-gradient(180deg, rgba(0,0,0,0.3) 0%, rgba(0,0,0,0.7) 100%);
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    z-index: 10;
-}
-
-#play-button {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    gap: 8px;
-    width: 160px;
-    height: 160px;
+    width: 40px;
+    height: 40px;
     border-radius: 50%;
-    border: 3px solid rgba(255,255,255,0.2);
-    background: linear-gradient(135deg, var(--rojo) 0%, var(--rojo-dark) 100%);
-    color: #fff;
-    cursor: pointer;
-    box-shadow: 0 10px 40px rgba(230,57,70,0.5);
-    transition: transform 0.2s, box-shadow 0.2s;
-}
-
-#play-button:active {
-    transform: scale(0.93);
-    box-shadow: 0 4px 16px rgba(230,57,70,0.6);
-}
-
-.play-icon {
-    font-size: 3.2rem;
-    line-height: 1;
-    margin-left: 6px; /* centrar visualmente */
-}
-
-.play-text {
-    font-size: 0.75rem;
-    font-weight: bold;
-    letter-spacing: 2px;
-    text-transform: uppercase;
-    font-family: -apple-system, BlinkMacSystemFont, sans-serif;
-}
-
-/* --- Info episodio --- */
-#episode-info {
-    padding: 20px 20px 40px;
-    background: var(--bg-deep);
-    flex: 1;
-}
-
-#episode-title {
-    font-size: 1.2rem;
-    color: var(--texto);
-    margin-bottom: 8px;
-    line-height: 1.4;
-}
-
-#episode-desc {
-    font-size: 0.95rem;
-    color: var(--texto-suave);
-    line-height: 1.6;
-    font-style: italic;
-}
-
-/* ==================== MODAL ERROR ==================== */
-.modal {
-    position: fixed;
-    inset: 0;
-    background: rgba(0,0,0,0.85);
+    background: rgba(230,57,70,0.12);
+    border: 1px solid rgba(230,57,70,0.3);
+    color: var(--rojo);
+    font-size: 1rem;
     display: flex;
     align-items: center;
     justify-content: center;
-    z-index: 3000;
-    padding: 24px;
+    transition: background 0.18s;
 }
 
-.modal-content {
-    background: var(--bg-card2);
-    border: 1px solid var(--borde);
-    border-radius: 20px;
-    padding: 40px 30px;
+.card:active .btn-play {
+    background: var(--rojo);
+    color: #fff;
+}
+
+/* ===== FOOTER ===== */
+footer {
+    padding: 28px 20px 0;
     text-align: center;
-    max-width: 360px;
-    width: 100%;
 }
 
-.error-icon {
-    font-size: 3rem;
-    display: block;
-    margin-bottom: 12px;
-}
-
-.modal-content h2 {
-    font-size: 1.5rem;
-    color: var(--rojo);
-    margin-bottom: 10px;
-}
-
-.modal-content p {
-    color: var(--texto-suave);
-    font-size: 1rem;
-    margin-bottom: 24px;
+footer p {
+    font-size: 0.8rem;
+    color: var(--suave);
+    font-style: italic;
     line-height: 1.5;
 }
 
-#btn-retry {
-    padding: 14px 36px;
-    font-size: 1rem;
-    font-weight: bold;
-    border: none;
-    border-radius: 10px;
-    background: var(--rojo);
-    color: #fff;
-    cursor: pointer;
+/* ===== TABLET ===== */
+@media (min-width: 540px) {
+    h1      { font-size: 2.4rem; }
+    .num    { width: 54px; height: 54px; font-size: 1.5rem; }
+    .ep-titulo { font-size: 1.1rem; }
+    main    { padding: 24px 20px 0; gap: 12px; }
 }
 
-/* ==================== UTILIDADES ==================== */
-.hidden {
-    display: none !important;
-}
-
-/* ==================== RESPONSIVE ==================== */
-
-/* Tablets */
-@media (min-width: 600px) {
-    header h1   { font-size: 2.8rem; }
-    .card-number { width: 60px; height: 60px; font-size: 1.8rem; }
-    .card-title  { font-size: 1.15rem; }
-    #play-button { width: 200px; height: 200px; }
-    .play-icon   { font-size: 4rem; }
-    .play-text   { font-size: 0.85rem; }
-}
-
-/* Landscape móvil */
-@media (orientation: landscape) and (max-height: 500px) {
-    #video-wrapper { aspect-ratio: auto; height: calc(100vh - 50px); }
-    #play-button   { width: 110px; height: 110px; }
-    .play-icon     { font-size: 2.5rem; }
-    #episode-info  { display: none; }
-}
-
-/* Reducir movimiento */
+/* ===== REDUCIR MOVIMIENTO ===== */
 @media (prefers-reduced-motion: reduce) {
-    .video-card,
-    #play-button {
-        transition: none;
-    }
+    .card { transition: none; }
 }
