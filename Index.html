@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <meta name="theme-color" content="#1a1a2e">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <title>The Chosen - Video</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="manifest" href="manifest.json">
+    <link rel="icon" type="image/png" href="icon-192.png">
+    <link rel="apple-touch-icon" href="icon-192.png">
+</head>
+<body>
+    <!-- Pantalla de carga -->
+    <div id="loading-screen">
+        <div class="loader"></div>
+        <p>Cargando video...</p>
+    </div>
+
+    <!-- Contenedor del video -->
+    <div id="video-container" class="hidden">
+        <iframe 
+            id="video-frame"
+            src="" 
+            frameborder="0" 
+            allow="autoplay; fullscreen; picture-in-picture" 
+            allowfullscreen>
+        </iframe>
+    </div>
+
+    <!-- Botón gigante de Play (overlay) -->
+    <button id="play-button" class="hidden" aria-label="Reproducir video">
+        <span class="play-icon">▶</span>
+        <span class="play-text">VER VIDEO</span>
+    </button>
+
+    <!-- Botón de ayuda (esquina) -->
+    <button id="help-button" class="hidden" aria-label="Ayuda">
+        ❓
+    </button>
+
+    <!-- Modal de ayuda -->
+    <div id="help-modal" class="modal hidden">
+        <div class="modal-content">
+            <h2>¿Cómo usar?</h2>
+            <ol>
+                <li>Toca el botón <strong>▶ VER VIDEO</strong></li>
+                <li>Para pausar: toca la pantalla</li>
+                <li>Pantalla completa: toca ⛶</li>
+            </ol>
+            <button id="close-help">Cerrar</button>
+        </div>
+    </div>
+
+    <!-- Mensaje de error -->
+    <div id="error-message" class="hidden">
+        <h2>⚠️ Sin conexión</h2>
+        <p>Verifica tu internet e intenta de nuevo</p>
+        <button id="retry-button">Reintentar</button>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
