@@ -21,7 +21,7 @@ const EPISODIOS = [
     {
         titulo: "The Rock on Which It Is Built",
         descripcion: "Temporada 1, Episodio 4",
-        url: "https://cloud-s84178-118-164.spcdn.cc/hls/h75a5z7pfle2alhulmzt47e5cctsyu3rglhmftgmbrfr4kcjviak74yrk4sq/iframes-v1-a1.m3u8"
+        url:"https://cloud-s84178-118-164.spcdn.cc/hls/h75a5z7pfle2alhulmzt47e5cctsyu3rglhmftgmbrfr4kcjviapuciqk4sq/index-v1-a1.m3u8"
     },
     {
         titulo: "The Wedding Gift",
@@ -36,7 +36,7 @@ const EPISODIOS = [
     {
         titulo: "Invitations",
         descripcion: "Temporada 1, Episodio 7",
-        url: "https://cloud-s84178-118-164.spcdn.cc/hls/h75a3zppfle2alhulmzt4jwmdcc47bilgzy434mderxcjzhphawadodwmjxa/iframes-v1-a1.m3u8"
+        url: "https://cloud-s84178-118-164.spcdn.cc/hls/h75a3zppfle2alhulmzt4jwmdcc47bilgzy434mderxcjzhphawbqqtxmjxa/master.m3u8"
     },
     {
         titulo: "I Am He",
