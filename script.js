@@ -21,27 +21,27 @@ const EPISODIOS = [
     {
         titulo: "The Rock on Which It Is Built",
         descripcion: "Temporada 1, Episodio 4",
-        url: "https://watch.thechosen.tv/video/184683594337?language=en&position=0"
+        url: "https://cloud-s84178-118-164.spcdn.cc/hls/h75a5z7pfle2alhulmzt47e5cctsyu3rglhmftgmbrfr4kcjviak74yrk4sq/iframes-v1-a1.m3u8"
     },
     {
         titulo: "The Wedding Gift",
         descripcion: "Temporada 1, Episodio 5",
-        url: "https://watch.thechosen.tv/video/184683594338?language=en&position=0"
+        url: "https://cloud-s84178-118-164.spcdn.cc/hls/h75a5zhpfle2alhulmzt4posaslpf3p4heoe4a6hayb2gomw7ohbo6si7z4a/index-v1-a1.m3u8"
     },
     {
         titulo: "Indescribable Virtue",
         descripcion: "Temporada 1, Episodio 6",
-        url: "https://watch.thechosen.tv/video/184683594339?language=en&position=0"
+        url: "https://cloud-s84178-118-164.spcdn.cc/hls/h75az2xpfle2alhulmzt4pmud4jvojpvyd5bhsfka5cceujs2e2v4455wtca/index-v1-a1.m3u8"
     },
     {
         titulo: "Invitations",
         descripcion: "Temporada 1, Episodio 7",
-        url: "https://watch.thechosen.tv/video/184683594340?language=en&position=0"
+        url: "https://cloud-s84178-118-164.spcdn.cc/hls/h75a3zppfle2alhulmzt4jwmdcc47bilgzy434mderxcjzhphawadodwmjxa/iframes-v1-a1.m3u8"
     },
     {
         titulo: "I Am He",
         descripcion: "Temporada 1, Episodio 8",
-        url: "https://watch.thechosen.tv/video/184683594341?language=en&position=0"
+        url: "https://stream-4891-212-105.pkcdn.org/juohpheqgyikkfn2mcw7qoanm7dn3ybrd3y75ulwbcrjfjmnmxikxnckta/v.mp4"
     },
     {
         titulo: "Episodio 9",
