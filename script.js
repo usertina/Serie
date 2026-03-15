@@ -16,7 +16,7 @@ const EPISODIOS = [
     {
         titulo: "Jesus Loves Me",
         descripcion: "Temporada 1, Episodio 3",
-        url: "https://cloud-s84178-118-164.spcdn.cc/hls/h75azbfnfle2alhulm7d4ogejlqnqzbt4uh5dyelthlfvechtqaqlpfjob4q/iframes-v1-a1.m3u8"
+        url: "https://cloud-s84178-118-164.spcdn.cc/hls/h75azbfnfle2alhulm7d4ogejlqnqzbt4uh5dyelthlfvechtqaqlpfjob4q/index-v1-a1.m3u8"
     },
     {
         titulo: "The Rock on Which It Is Built",
