@@ -45,32 +45,32 @@ const EPISODIOS = [
     {
         titulo: "Trueno",
         descripcion: "Temporada 2, Episodio 1",
-        url: "https://watch.thechosen.tv/video/184683594353?language=en&position=0"
+        url: "https://box-1102-t.vmeas.cloud/hls/xqx2pw4unzokjiqbtgssj72bwi4logwz47yvdumorunpuxewzloqttntcgla/index-v1-a1.m3u8"
     },
     {
         titulo: "Te ví",
         descripcion: "Temporada 2, Episodio 2",
-        url: "https://watch.thechosen.tv/video/184683594354?language=en&position=0"
+        url: "https://cloud-s84178-118-164.spcdn.cc/hls/h75azaxpfle2alhulmzt4merdje35zet2p6wjfekdi3zzblmwkapdpwrlyxa/index-v1-a1.m3u8"
     },
     {
         titulo: "Mateo 4:24",
         descripcion: "Temporada 2, Episodio 3",
-        url: "https://watch.thechosen.tv/video/184683594355?language=en&position=0"
+        url: "https://cloud-s84178-118-164.spcdn.cc/hls/h75a534yfxe2alhulmht47u4biq2njaq6rlkqaqpcldwht3ty2b5mp7cypeq/index-v1-a1.m3u8"
     },
     {
         titulo: "La ocasión perfecta",
         descripcion: "Temporada 2, Episodio 4",
-        url: "https://watch.thechosen.tv/video/184683594356?language=en&position=0"
+        url: "https://cloud-s84178-118-164.spcdn.cc/hls/h75a53uyfxe2alhulmht4l6tckpdrgnf545bypvzlsgfok7h2zcjcctmufkq/index-v1-a1.m3u8"
     },
     {
         titulo: "Espíritu",
         descripcion: "Temporada 2, Episodio 5",
-        url: "https://watch.thechosen.tv/video/184683594357?language=en&position=0"
+        url: "https://cloud-s84178-118-164.spcdn.cc/hls/h75a54uyfxe2alhulmht47gtclgqukky3i5swdvnzg7pu3mhxm6zddoeg6fq/index-v1-a1.m3u8"
     },
     {
         titulo: "Ilícito",
         descripcion: "Temporada 2, Episodio 6",
-        url: "https://watch.thechosen.tv/video/184683594358?language=en&position=0"
+        url: "https://cloud-s84178-118-164.spcdn.cc/hls/h75a744yfxe2alhulmht4loqbwaeyiarhohsjhlds2romi57jmarfm6ziroa/index-v1-a1.m3u8"
     },
     {
         titulo: "Ajuste de cuentas",
