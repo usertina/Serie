@@ -5,7 +5,7 @@ const EPISODIOS = [
     {
         titulo: "Te he llamado por tu nombre",
         descripcion: "Temporada 1, Episodio 1",
-        url: "https://cloud-s84178-118-164.spcdn.cc/hls/h75azyppfle2alhulmzt4lm5dsucxda2f7hzw3lbwumg3a5tb5i2lckyj2ra/master.m3u8"
+        url: "https://cloud-s84178-118-164.spcdn.cc/hls/h75azyppfle2alhulmzt4lm5dsucxda2f7hzw3lbwumg3ukuhrrnf52ibbnq/index-v1-a1.m3u8"
     },
     {
         titulo: "Shabbat",
