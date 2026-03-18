@@ -125,57 +125,57 @@ const EPISODIOS = [
     {
         titulo: "Promesas",
         descripcion: "Temporada 4, Episodio 1",
-        url: "https://watch.thechosen.tv/video/184683594360?language=en&position=0"
+        url: "https://box-1093-w.vmeas.cloud/hls/xqx2pgggczokjiqbthpsl6qawtjotwhm767oac7ozrgmdsf7depbsmgqk7aa/index-v1-a1.m3u8"
     },
     {
         titulo: "Confesiones",
         descripcion: "Temporada 4, Episodio 2",
-        url: "https://watch.thechosen.tv/video/184683594360?language=en&position=0"
+        url: "https://box-1096-q.vmeas.cloud/hls/xqx2p5nkczokjiqbthqslmanx4b3nxlwfgugcijhmp6cseobwsqeysgod7yq/index-v1-a1.m3u8"
     },
     {
         titulo: "Luna en sangre",
         descripcion: "Temporada 4, Episodio 3",
-        url: "https://watch.thechosen.tv/video/184683594360?language=en&position=0"
+        url: "https://box-1101-t.vmeas.cloud/hls/xqx2o5i7cfokjiqbthvcl4i7xhxart4tc7nwmzyaon6at2covemoq72igwwq/index-v1-a1.m3u8"
     },
     {
         titulo: "Calma previa",
         descripcion: "Temporada 4, Episodio 4",
-        url: "https://watch.thechosen.tv/video/184683594360?language=en&position=0"
+        url: "https://box-1093-w.vmeas.cloud/hls/xqx2oq34cbokjiqbth3cljcnxcaizrsx2rjpmedzlkvbhbhqc6uk25artg6q/index-v1-a1.m3u8"
     },
     {
         titulo: "Esperar, servir y maquinar",
         descripcion: "Temporada 4, Episodio 5",
-        url: "https://watch.thechosen.tv/video/184683594360?language=en&position=0"
+        url: "https://cloud-s84178-118-164.spcdn.cc/hls/h75ayc6tete2alhulo3d47uwbad6yfkhryju5xbij45hxzqp2rvldl4adokq/index-v1-a1.m3u8"
     },
     {
         titulo: "Dedicación",
         descripcion: "Temporada 4, Episodio 6",
-        url: "https://watch.thechosen.tv/video/184683594360?language=en&position=0"
+        url: "https://cloud-s84178-118-164.spcdn.cc/hls/h75a6b6tete2alhulo3d4mwbdyvna5kdoi7xevstptg4er2cgurgy3h5y4aq/index-v1-a1.m3u8"
     },
     {
         titulo: "La última señal",
         descripcion: "Temporada 4, Episodio 7",
-        url: "https://watch.thechosen.tv/video/184683594360?language=en&position=0"
+        url: "https://cloud-s84178-118-164.spcdn.cc/hls/h75ay2wxele2alhuloud4765bc44sur6gnpxndnk7k6spm2c5sqvf7any3va/index-v1-a1.m3u8"
     },
     {
         titulo: "Humilde",
         descripcion: "Temporada 4, Episodio 8",
-        url: "https://watch.thechosen.tv/video/184683594360?language=en&position=0"
+        url: "https://box-1093-w.vmeas.cloud/hls/xqx2pz7kcjokjiqbtelcflqewq22cap5zhkq5fr3kjavesuyu7vns3jgd3la/index-v1-a1.m3u8"
     },
     {
         titulo: "Entrada",
         descripcion: "Temporada 5, Episodio 1",
-        url: "https://watch.thechosen.tv/video/184683594360?language=en&position=0"
+        url: "https://box-1489-u10.vmeas.cloud/hls2/04/01915/9s14z9o9m3bj_n/index-v1-a1.m3u8?t=Bv4RLCkY2riPbhvU6JfX0bXnfLD93KxRLF8Pmk-WNLA=&s=1773859517&e=43200&v=&i=0.4&sp=0&asn=12430"
     },
     {
         titulo: "Casa de cartas",
         descripcion: "Temporada 5, Episodio 2",
-        url: "https://watch.thechosen.tv/video/184683594360?language=en&position=0"
+        url: "https://box-1421-v10.vmeas.cloud/hls2/04/01915/d2c9511tg0hz_n/index-v1-a1.m3u8?t=iFoA-l-XxSrogipEStjgtVO7Qa-dxrkD4XHw9qAaIXE=&s=1773859557&e=43200&v=&i=0.4&sp=0&asn=12430"
     },
     {
         titulo: "Lamentos",
         descripcion: "Temporada 5, Episodio 3",
-        url: "https://watch.thechosen.tv/video/184683594360?language=en&position=0"
+        url: "https://cloud-s84178-118-164.spcdn.cc/hls/h75a5pkqe3e2alhulokt46wvbdga6d4lbxzikfzjvboedfycv57ups3e3z5a/index-v1-a1.m3u8"
     },
     {
         titulo: "La misma moneda",
