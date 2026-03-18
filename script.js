@@ -40,7 +40,7 @@ const EPISODIOS = [
     {
         titulo: "Yo soy el que soy",
         descripcion: "Temporada 1, Episodio 8",
-        url: "https://stream-4891-212-105.pkcdn.org/dash/juohpheqgyikkfn2mcw7qoanm7dn3ybrd3y75ulwbckjf53kk3r7dhnosi/manifest.mpd"
+        url: "https://stream-4891-212-105.pkcdn.org/juohpheqgyikkfn2mcw7qoanm7dn3ybrd3y75ulwbcrjf53kk3r4vfob6a/v.mp4"
     },
     {
         titulo: "Trueno",
