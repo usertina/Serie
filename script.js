@@ -75,52 +75,52 @@ const EPISODIOS = [
     {
         titulo: "Ajuste de cuentas",
         descripcion: "Temporada 2, Episodio 7",
-        url: "https://watch.thechosen.tv/video/184683594359?language=en&position=0"
+        url: "https://cloud-s84178-118-164.spcdn.cc/hls/h75a33eyfxe2alhulmht47obdzilp6lwak2piw545hkcyhf4l6caxkpy5x4a/index-v1-a1.m3u8"
     },
     {
         titulo: "Más allá de las montañas",
         descripcion: "Temporada 2, Episodio 8",
-        url: "https://watch.thechosen.tv/video/184683594360?language=en&position=0"
+        url: "https://stream-96255-141-139.pkcdn.org/d4objskfgyikkfn2mdmpqlknmk5bfmls567fg7yiove4kbuvlrn5zxbrgi/v.mp4"
     },
     {
         titulo: "Regreso a casa",
         descripcion: "Temporada 3, Episodio 1",
-        url: "https://watch.thechosen.tv/video/184683594360?language=en&position=0"
+        url: "https://cloud-s84178-118-164.spcdn.cc/hls/h75azwwffte2alhulmmd4owbcav3hlpjlnzvqst6iskzzfsebfsd3opvo7da/index-v1-a1.m3u8"
     },
     {
         titulo: "De dos en dos",
         descripcion: "Temporada 3, Episodio 2",
-        url: "https://watch.thechosen.tv/video/184683594360?language=en&position=0"
+        url: "https://cloud-s84178-118-164.spcdn.cc/hls/h75azwgffte2alhulmmd4jwgdc3tuk4ygw5ukubmrxlufzfo5rvk6osg7mra/index-v1-a1.m3u8"
     },
     {
         titulo: "Médico, cuídate a tí mismo",
         descripcion: "Temporada 3, Episodio 3",
-        url: "https://watch.thechosen.tv/video/184683594360?language=en&position=0"
+        url: "https://cloud-s84178-118-164.spcdn.cc/hls/h75a426xele2alhuloud4ogujec4i3oefm7mwhay26w6piygkfwwlbthpywa/index-v1-a1.m3u8"
     },
     {
         titulo: "Limpiar (parte 1)",
         descripcion: "Temporada 3, Episodio 4",
-        url: "https://watch.thechosen.tv/video/184683594360?language=en&position=0"
+        url: "https://cloud-s84178-118-164.spcdn.cc/hls/h75ayuoxele2alhuloud4km5jydck6hjqmtozrsjykrcy4qve2zdgagqjtha/index-v1-a1.m3u8"
     },
     {
         titulo: "Limpiar (parte 2)",
         descripcion: "Temporada 3, Episodio 5",
-        url: "https://watch.thechosen.tv/video/184683594360?language=en&position=0"
+        url: "https://cloud-s84178-118-164.spcdn.cc/hls/h75ayvwxele2alhuloud4ioudz5fm5wo5szemtpy5cdkl6mrz2uke6p645ca/index-v1-a1.m3u8"
     },
     {
         titulo: "Intensidad en Tent city",
         descripcion: "Temporada 3, Episodio 6",
-        url: "https://watch.thechosen.tv/video/184683594360?language=en&position=0"
+        url: "https://cloud-s84178-118-164.spcdn.cc/hls/h75a2v6xele2alhuloud4muva5otpj7doqgoxibcrijeydvogbubs247lkzq/index-v1-a1.m3u8"
     },
     {
         titulo: "Oídos para oir",
         descripcion: "Temporada 3, Episodio 7",
-        url: "https://watch.thechosen.tv/video/184683594360?language=en&position=0"
+        url: "https://cloud-s84178-118-164.spcdn.cc/hls/h75a2vgxele2alhuloud4i4scray46ltfg3c3axsamcf77eat44kn6h4fepq/index-v1-a1.m3u8"
     },
     {
         titulo: "Sustento",
         descripcion: "Temporada 3, Episodio 8",
-        url: "https://watch.thechosen.tv/video/184683594360?language=en&position=0"
+        url: "https://box-1086-u.vmeas.cloud/hls/xqx2otypnnokjiqbthcsjja25fscmqmg46a3c5s3kofsmfah5lsk66fm3fya/index-v1-a1.m3u8"
     },
     {
         titulo: "Promesas",
