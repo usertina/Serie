@@ -25,7 +25,7 @@ const EPISODIOS = [
     {
         titulo: "El regalo de boda",
         descripcion: "Temporada 1, Episodio 5",
-        url: "https://cloud-s84178-118-164.spcdn.cc/hls/h75a5zhpfle2alhulmzt4posaslpf3p4heoe4a6hayb2gomw7ohbo6si7z4a/index-v1-a1.m3u8"
+        url: "https://cloud-s84178-118-164.spcdn.cc/hls/h75a5zhpfle2alhulmzt4posaslpf3p4heoe4a6hayb2gomw7ohc3okb7z4a/master.m3u8"
     },
     {
         titulo: "Compasión infinita",
