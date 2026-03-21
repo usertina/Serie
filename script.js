@@ -20,7 +20,7 @@ const EPISODIOS = [
     {
         titulo: "Sobre esta roca edificaré",
         descripcion: "Temporada 1, Episodio 4",
-        url:"https://cloud-s84178-118-164.spcdn.cc/hls/h75a5z7pfle2alhulmzt47e5cctsyu3rglhmftgmbrfr4kcjviapuciqk4sq/index-v1-a1.m3u8"
+        url:"https://cloud-s84178-118-164.spcdn.cc/hls/h75a5z7pfle2alhulmzt47e5cctsyu3rglhmftgmbrfr4kcjviaaomayk4sq/index-v1-a1.m3u8"
     },
     {
         titulo: "El regalo de boda",
