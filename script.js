@@ -30,7 +30,7 @@ const EPISODIOS = [
     {
         titulo: "Compasión infinita",
         descripcion: "Temporada 1, Episodio 6",
-        url: "https://cloud-s84178-118-164.spcdn.cc/hls/h75az2xpfle2alhulmzt4pmud4jvojpvyd5bhsfka5cceujs2e2v4455wtca/index-v1-a1.m3u8"
+        url: "https://cloud-s84178-118-164.spcdn.cc/hls/h75az2xpfle2alhulmzt4pmud4jvojpvyd5bhsfka5cceujs2e2sftvuwtca/master.m3u8"
     },
     {
         titulo: "Invitaciones",
