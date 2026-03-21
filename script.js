@@ -35,7 +35,7 @@ const EPISODIOS = [
     {
         titulo: "Invitaciones",
         descripcion: "Temporada 1, Episodio 7",
-        url: "https://cloud-s84178-118-164.spcdn.cc/hls/h75a3zppfle2alhulmzt4jwmdcc47bilgzy434mderxcjzhphawbqqtxmjxa/master.m3u8"
+        url: "https://cloud-s84178-118-164.spcdn.cc/hls/h75a3zppfle2alhulmzt4jwmdcc47bilgzy434mderxcjzhphawpqbl7mjxa/master.m3u8"
     },
     {
         titulo: "Yo soy el que soy",
