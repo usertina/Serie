@@ -10,7 +10,7 @@ const EPISODIOS = [
     {
         titulo: "Shabbat",
         descripcion: "Temporada 1, Episodio 2",
-        url: "https://box-1102-t.vmeas.cloud/hls/,xqx2pf4unzokjiqbtgssjiyd5gvkx4rftjckquapfued363nsjwxs36p2iya,.urlset/master.m3u8"
+        url: "https://box-1102-t.vmeas.cloud/hls/xqx2pf4unzokjiqbtgssjiyd5gvkx4rftjckquapf4ed363nsjwvrceyb4ba/index-v1-a1.m3u8"
     },
     {
         titulo: "Jesús ama a los más pequeños",
