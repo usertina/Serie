@@ -15,7 +15,7 @@ const EPISODIOS = [
     {
         titulo: "Jesús ama a los más pequeños",
         descripcion: "Temporada 1, Episodio 3",
-        url: "https://stream-4491-212-99.pkcdn.org/keohpguqgyikkfn2mcw7qlsigwyak2hlgbdppsebo2k7tgluthnbv6ncgi/v.mp4"
+        url: "https://stream-4491-212-99.pkcdn.org/keohpguqgyikkfn2mcw7qlsigwyak2hlgbdppsebo2k7tgluthnp5eg5gi/v.mp4"
     },
     {
         titulo: "Sobre esta roca edificaré",
