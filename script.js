@@ -5,22 +5,22 @@ const EPISODIOS = [
     {
         titulo: "Te he llamado por tu nombre",
         descripcion: "Temporada 1, Episodio 1",
-        url: "https://cloud-s84178-118-164.spcdn.cc/hls/h75azyppfle2alhulmzt4lm5dsucxda2f7hzw3lbwumg3ukuhrrnf52ibbnq/index-v1-a1.m3u8"
+        url: "https://cloud-s84178-118-164.spcdn.cc/hls/h75azyppfle2alhulmzt4lm5dsucxda2f7hzw3lbwumg3a5tb5iwt6zgj2ra/iframes-v1-a1.m3u8"
     },
     {
         titulo: "Shabbat",
         descripcion: "Temporada 1, Episodio 2",
-        url: "https://box-1102-t.vmeas.cloud/hls/xqx2pf4unzokjiqbtgssjiyd5gvkx4rftjckquapf4ed363nsjwvrceyb4ba/index-v1-a1.m3u8"
+        url: "https://box-1102-t.vmeas.cloud/hls/xqx2pf4unzokjiqbtgssjiyd5gvkx4rftjckquapf4ed363nsjwq3sxpb4ba/index-v1-a1.m3u8"
     },
     {
         titulo: "Jesús ama a los más pequeños",
         descripcion: "Temporada 1, Episodio 3",
-        url: "https://cloud-s84178-118-164.spcdn.cc/hls/h75azbfnfle2alhulm7d4ogejlqnqzbt4uh5dyelthlfvqvaxsanejtubaka/index-v1-a1.m3u8"
+        url: "https://cloud-s84178-118-164.spcdn.cc/hls/h75azbfnfle2alhulm7d4ogejlqnqzbt4uh5dyelthlfvechtqaud6owob4q/index-v1-a1.m3u8"
     },
     {
         titulo: "Sobre esta roca edificaré",
         descripcion: "Temporada 1, Episodio 4",
-        url:"https://cloud-s84178-118-164.spcdn.cc/hls/h75a5z7pfle2alhulmzt47e5cctsyu3rglhmftgmbrfr4kcjviaaomayk4sq/master.m3u8"
+        url:"https://cloud-s84178-118-164.spcdn.cc/hls/h75a5z7pfle2alhulmzt47e5cctsyu3rglhmftgmbrfr4kcjviadwtdpk4sq/iframes-v1-a1.m3u8"
     },
     {
         titulo: "El regalo de boda",
