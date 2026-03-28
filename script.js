@@ -20,27 +20,27 @@ const EPISODIOS = [
     {
         titulo: "Sobre esta roca edificaré",
         descripcion: "Temporada 1, Episodio 4",
-        url:"https://cloud-s84178-118-164.spcdn.cc/hls/h75a5z7pfle2alhulmzt47e5cctsyu3rglhmftgmbrfr4kcjviadwtdpk4sq/iframes-v1-a1.m3u8"
+        url:"https://cloud-s84178-118-164.spcdn.cc/hls/h75a5z7pfle2alhulmzt47e5cctsyu3rglhmftgmbrfr4kcjvialwstpk4sq/index-v1-a1.m3u8"
     },
     {
         titulo: "El regalo de boda",
         descripcion: "Temporada 1, Episodio 5",
-        url: "https://cloud-s84178-118-164.spcdn.cc/hls/h75a5zhpfle2alhulmzt4posaslpf3p4heoe4a6hayb2gomw7ohc3okb7z4a/master.m3u8"
+        url: "https://cloud-s84178-118-164.spcdn.cc/hls/h75a5zhpfle2alhulmzt4posaslpf3p4heoe4a6hayb2gomw7ohb7qzw7z4a/index-v1-a1.m3u8"
     },
     {
         titulo: "Compasión infinita",
         descripcion: "Temporada 1, Episodio 6",
-        url: "https://cloud-s84178-118-164.spcdn.cc/hls/h75az2xpfle2alhulmzt4pmud4jvojpvyd5bhsfka5cceujs2e2sftvuwtca/master.m3u8"
+        url: "https://cloud-s84178-118-164.spcdn.cc/hls/h75az2xpfle2alhulmzt4pmud4jvojpvyd5bhsfka5cceujs2e2vrsgdwtca/index-v1-a1.m3u8"
     },
     {
         titulo: "Invitaciones",
         descripcion: "Temporada 1, Episodio 7",
-        url: "https://cloud-s84178-118-164.spcdn.cc/hls/h75a3zppfle2alhulmzt4jwmdcc47bilgzy434mderxcjzhphawpqbl7mjxa/master.m3u8"
+        url: "https://cloud-s84178-118-164.spcdn.cc/hls/h75a3zppfle2alhulmzt4jwmdcc47bilgzy434mderxcjzhphawb4ayimjxa/index-v1-a1.m3u8"
     },
     {
         titulo: "Yo soy el que soy",
         descripcion: "Temporada 1, Episodio 8",
-        url: "https://stream-4891-212-105.pkcdn.org/juohpheqgyikkfn2mcw7qoanm7dn3ybrd3y75ulwbcrjf53kivivlthlki/v.mp4"
+        url: "https://stream-4891-212-105.pkcdn.org/juohpheqgyikkfn2mcw7qoanm7dn3ybrd3y75ulwbcrjfjmnmxikidzuta/v.mp4"
     },
     {
         titulo: "Trueno",
